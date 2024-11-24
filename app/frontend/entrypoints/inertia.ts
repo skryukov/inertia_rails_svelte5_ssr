@@ -1,5 +1,5 @@
 import { createInertiaApp, type ResolvedComponent } from '@inertiajs/svelte'
-import { mount } from 'svelte'
+import { mount, hydrate } from 'svelte'
 
 createInertiaApp({
   // Set default page title
@@ -32,12 +32,16 @@ createInertiaApp({
 
   setup({ el, App, props }) {
     if (el) {
-      mount(App, { target: el, props })
+      if (el.dataset.serverRendered === 'true') {
+        hydrate(App, { target: el, props })
+      } else {
+        mount(App, { target: el, props })
+      }
     } else {
       console.error(
         'Missing root element.\n\n' +
-          'If you see this error, it probably means you load Inertia.js on non-Inertia pages.\n' +
-          'Consider moving <%= vite_typescript_tag "inertia" %> to the Inertia-specific layout instead.',
+        'If you see this error, it probably means you load Inertia.js on non-Inertia pages.\n' +
+        'Consider moving <%= vite_typescript_tag "inertia" %> to the Inertia-specific layout instead.',
       )
     }
   },
