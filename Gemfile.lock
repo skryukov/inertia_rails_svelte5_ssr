@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/skryukov/inertia-rails.git
+  revision: eac9c7347b0d1162bc15c6874bf957434a9d59cb
+  branch: upstream-generators
+  specs:
+    inertia_rails (3.4.0)
+      railties (>= 6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -354,6 +362,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  inertia_rails!
   jbuilder
   kamal
   propshaft

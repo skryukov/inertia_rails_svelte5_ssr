@@ -55,3 +55,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "inertia_rails", github: "skryukov/inertia-rails", branch: "upstream-generators"
