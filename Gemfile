@@ -57,3 +57,5 @@ group :test do
 end
 
 gem "inertia_rails", github: "skryukov/inertia-rails", branch: "upstream-generators"
+
+gem "vite_rails", "~> 3.0"
